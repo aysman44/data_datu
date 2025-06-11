@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submitted Messages</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>All Submitted Messages</h1>
+    {% for msg in messages %}
+        <div>
+            <strong>{{ msg.name }}</strong> ({{ msg.email }})<br>
+            <p>{{ msg.message }}</p>
+            <hr>
+        </div>
+    {% endfor %}
+    <a href="{{ url_for('home') }}">Back to Home</a>
+</body>
+</html>
